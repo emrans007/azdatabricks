@@ -1,0 +1,17 @@
+{
+	"name": "EMadf",
+	"properties": {
+		"globalParameters": {
+			"GP1": {
+				"type": "int",
+				"value": 13
+			}
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e319274f-6239-401f-92a7-7128323e6460",
+		"tenantId": "862a9af9-0aea-463f-807a-9a3f07003091"
+	}
+}
