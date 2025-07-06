@@ -1,0 +1,58 @@
+{
+	"name": "pipeline3",
+	"properties": {
+		"activities": [
+			{
+				"name": "Get Metadata1",
+				"type": "GetMetadata",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "dssubfd1test",
+						"type": "DatasetReference",
+						"parameters": {
+							"subfoldrname": {
+								"value": "@pipeline().parameters.pp1",
+								"type": "Expression"
+							}
+						}
+					},
+					"fieldList": [
+						"columnCount",
+						"structure",
+						"size"
+					],
+					"storeSettings": {
+						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
+						"enablePartitionDiscovery": false
+					},
+					"formatSettings": {
+						"type": "DelimitedTextReadSettings"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"pp1": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"dd1": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-07-02T01:31:51Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

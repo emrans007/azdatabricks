@@ -1,0 +1,55 @@
+{
+	"name": "FOREACHpipeline2",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@variables('VAR')",
+						"type": "Expression"
+					},
+					"isSequential": false,
+					"activities": [
+						{
+							"name": "Wait1",
+							"type": "Wait",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"waitTimeInSeconds": {
+									"value": "@item()",
+									"type": "Expression"
+								}
+							}
+						}
+					]
+				}
+			}
+		],
+		"variables": {
+			"VAR": {
+				"type": "Array",
+				"defaultValue": [
+					3,
+					4,
+					6
+				]
+			},
+			"ST": {
+				"type": "String",
+				"defaultValue": "5"
+			},
+			"IT": {
+				"type": "Integer",
+				"defaultValue": 2
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-06-26T04:37:51Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
